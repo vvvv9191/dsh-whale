@@ -1,0 +1,17 @@
+{
+  "name": "dsh-little-whale",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test --test-isolation=none test/core.test.mjs",
+    "test:browser": "node test/browser.mjs",
+    "install:gui": "node install.mjs",
+    "uninstall:gui": "node install.mjs --uninstall"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "playwright-core": "^1.55.0"
+  }
+}
