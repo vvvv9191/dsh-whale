@@ -1,4 +1,17 @@
 node_modules/
 test-results/
 original-index.html
-backups//
+backups/
+
+# Later experiments and generated local artifacts not used by the dsh-whale plugin.
+assets/jellyfish.png
+dist/assets/
+dist/jellyfish-pet.js
+dist/whale-artwork.svg
+preview.html
+src/client.mjs
+src/jellyfish.mjs
+src/jellyfish.css
+test/browser.mjs
+小鲸鱼.jpg
+小鲸鱼-资料清单.md

@@ -1,4 +1,5 @@
 // Hand-traced vector artwork based on the user's supplied cartoon reference.
+// Artwork source: 小红书号95645761894，画画的阿慢
 // Transparent canvas: no paper backdrop, watermark, text, stars, hearts or water
 // are baked into the resting whale. Effect layers are exported separately.
 export const VIEW_BOX = '180 465 960 960';

@@ -1,4 +1,5 @@
 import css from './whale.css';
+import backgroundUrl from '../assets/harness-background.png';
 import { STORAGE_KEY, normalizeSettings, chooseAction, swimBounds, clampPosition, clamp, stepMotion } from './core.mjs';
 import { whaleArtwork, sprayArtwork, charmArtwork } from './artwork.mjs';
 const HOST_ID = 'dsh-whale-pet';
@@ -48,6 +49,17 @@ export function mountWhale() {
   const sidebarStyle = document.createElement('style');
   sidebarStyle.dataset.dshSidebarTint = 'true';
   sidebarStyle.textContent = `
+    #dsh-whale-background {
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: 0 !important;
+      pointer-events: none !important;
+      background-color: #f2faff !important;
+      background-image: linear-gradient(rgba(242,250,255,.78), rgba(242,250,255,.78)), url("${backgroundUrl}") !important;
+      background-position: center top, center top !important;
+      background-size: cover, cover !important;
+      background-repeat: no-repeat, no-repeat !important;
+    }
     [data-dsh-sidebar-tint="true"] { background-color: #fcfdff !important; }
     [data-dsh-main-bg="true"] { background: transparent !important; background-color: transparent !important; background-image: none !important; }
   `;
@@ -365,6 +377,3 @@ export function mountWhale() {
   host.whaleDispose = dispose;
   return dispose;
 }
-
-if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountWhale, { once: true });
-else mountWhale();

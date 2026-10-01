@@ -1,37 +1,61 @@
-# 小蓝鲸 · Harness 界面桌宠
+# dsh-whale · 小蓝鲸 Harness 插件
 
-一个安装在 DeepSeek Harness `http://127.0.0.1:3080/` 页面内的透明小鲸鱼桌宠。它使用 Shadow DOM，不是跨所有 Windows 窗口的系统桌宠。
+一个可通过 DSH Plugin Manager 安装到 DeepSeek Harness Web 界面的透明蓝色小鲸鱼桌宠。它运行在 Harness Web 页面内，不是跨所有 Windows 窗口的系统桌宠。
+
+## 安装
+
+在已初始化的 DSH profile 中运行：
+
+```powershell
+dsh plugin --profile web add https://github.com/vvvv9191/dsh-whale.git
+```
+
+如果使用其他 profile，把 `web` 替换为对应 profile 名称。安装后重启或等待该 profile 的 HMR 应用变更。
+
+卸载：
+
+```powershell
+dsh plugin --profile web remove dsh-whale
+```
 
 ## 功能
 
-- 点击页面：小鲸鱼游到指定位置。
-- 双击小鲸鱼：掉头。
-- 拖动小鲸鱼：搬到新位置。
-- 点击小鲸鱼：触发轻量互动。
-- 右键或齿轮：打开设置，可调整大小和自由游动。
-- 背景：花朵水彩图片位于独立固定图层，页面滚动时背景不随内容移动。
-- 左侧栏：冷白色；右侧：浅蓝色花朵背景。
+- 小鲸鱼自动缓慢游动；悬停时暂停，便于点击。
+- 点击随机触发三种互动：星星爱心、喷水、翻滚。
+- 平时只冒小气泡，不显示水珠、星星、爱心或文字气泡。
+- 支持拖动搬家、右键/齿轮设置、键盘方向键移动。
+- 支持隐藏/唤醒、大小调整（56–160px，默认 96px）和自由游动开关。
+- 支持减少动态效果设置。
+- 使用 Shadow DOM，避免覆盖 Harness 页面结构。
+
+## 艺术来源
+
+小鲸鱼形象基于用户提供的参考图绘制。
+
+**图片来源：小红书号95645761894，画画的阿慢**
+
+本仓库中的 DSH 插件代码和页面集成部分，与原始图像作品来源分开标注。
 
 ## 主要文件
 
-- `assets/harness-background.png`：右侧花朵水彩背景。
-- `src/artwork.mjs`：小鲸鱼 SVG 矢量绘制。
-- `src/whale.mjs`：Shadow DOM overlay、移动、互动与背景表面检测。
-- `src/whale.css`：小鲸鱼外观和动画。
-- `src/core.mjs`：设置、边界和运动计算。
-- `dist/whale-pet.js`：可部署构建产物。
-- `install.mjs`：安装鲸鱼 overlay、背景图片和主题样式。
+- `package.json`：DSH bundle 与 Client 插件清单
+- `cordis.patch.yml`：安装时插入 `dsh-whale` Host 行
+- `index.js`：Host 半部
+- `client.js`：构建后的 DSH Client Loader 入口
+- `src/client-entry.mjs`：Client Loader 源入口
+- `src/artwork.mjs`：鲸鱼 SVG、本体、喷水、星星和爱心
+- `src/whale.mjs`：Shadow DOM overlay、游动、互动、拖动和设置
+- `src/whale.css`：鲸鱼外观和动画
+- `src/core.mjs`：设置、边界和运动计算
+- `NOTICE.md`：艺术来源署名
 
-## 构建、测试和安装
+## 开发与测试
 
 ```powershell
+npm install
 npm run build
 npm test
-npm run install:gui
-# 刷新原来的 http://127.0.0.1:3080/
-
-# 移除本地 overlay
-npm run uninstall:gui
+npm run test:plugin
 ```
 
-安装脚本只替换自己拥有的入口标记，并保留 Harness 原有应用脚本。升级或重装 Harness 可能覆盖本地前端定制，届时重新执行 `npm run install:gui` 即可。
+`npm run build` 会生成可安装的 `client.js`，同时生成 `dist/whale-pet.js` 供本地预览或兼容旧安装脚本使用。

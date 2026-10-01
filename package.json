@@ -1,14 +1,33 @@
 {
-  "name": "dsh-little-whale",
+  "name": "dsh-whale",
   "version": "1.0.0",
+  "description": "A transparent swimming blue whale desktop pet for DeepSeek Harness.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vvvv9191/dsh-whale.git"
+  },
   "private": true,
   "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "node build.mjs",
     "test": "node --test --test-isolation=none test/core.test.mjs",
+    "test:plugin": "node test/plugin.test.mjs",
     "test:browser": "node test/browser.mjs",
     "install:gui": "node install.mjs",
     "uninstall:gui": "node install.mjs --uninstall"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
   },
   "devDependencies": {
     "esbuild": "^0.25.0",
