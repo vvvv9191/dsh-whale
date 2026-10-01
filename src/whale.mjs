@@ -28,7 +28,7 @@ export function mountWhale() {
     
      <section class="menu" role="dialog" aria-label="小蓝鲸设置" hidden>
       <header><h2>小蓝鲸 <span aria-hidden="true">·</span> 陪你游一会儿</h2><button class="close" aria-label="关闭设置">×</button></header>
-      <p class="subtitle">你的迷你海洋伙伴</p>
+      
       <label class="size-label" for="whale-size">鲸鱼大小 <output for="whale-size"></output></label>
       <input id="whale-size" type="range" min="56" max="160" step="2" aria-label="鲸鱼大小" />
       <div class="scale-hints"><span>小小只</span><span>胖乎乎</span></div>

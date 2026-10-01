@@ -100,13 +100,13 @@ input[type=checkbox] { width: 31px; height: 17px; accent-color: #4a8df6; cursor:
         <div class="float"><div class="direction"><div class="actor">${Y}${ve()}${ze()}</div></div></div>
       </button>
       <div class="effects" aria-hidden="true"></div>
-
+       
       <button class="gear" aria-label="\u5C0F\u84DD\u9CB8\u8BBE\u7F6E" title="\u5C0F\u84DD\u9CB8\u8BBE\u7F6E" aria-expanded="false">\u2699</button>
     </div>
-
+    
      <section class="menu" role="dialog" aria-label="\u5C0F\u84DD\u9CB8\u8BBE\u7F6E" hidden>
       <header><h2>\u5C0F\u84DD\u9CB8 <span aria-hidden="true">\xB7</span> \u966A\u4F60\u6E38\u4E00\u4F1A\u513F</h2><button class="close" aria-label="\u5173\u95ED\u8BBE\u7F6E">\xD7</button></header>
-      <p class="subtitle">\u4F60\u7684\u8FF7\u4F60\u6D77\u6D0B\u4F19\u4F34</p>
+      
       <label class="size-label" for="whale-size">\u9CB8\u9C7C\u5927\u5C0F <output for="whale-size"></output></label>
       <input id="whale-size" type="range" min="56" max="160" step="2" aria-label="\u9CB8\u9C7C\u5927\u5C0F" />
       <div class="scale-hints"><span>\u5C0F\u5C0F\u53EA</span><span>\u80D6\u4E4E\u4E4E</span></div>
