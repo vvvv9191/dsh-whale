@@ -1,5 +1,5 @@
 # dsh-whale · 来解锁你的工作搭子吧
-<img width="1279" height="1832" alt="小鲸鱼" src="https://github.com/user-attachments/assets/ddb20dbb-0c02-42ce-a733-a970991de9d8" />
+"E:\MCP\jellyfish-pet\a61f1910e846208baae9db372cf51b0f.jpg"
 
 一个可通过 DSH Plugin Manager 安装到 DeepSeek Harness Web 界面的透明蓝色小鲸鱼桌宠。它运行在 Harness Web 页面内，不是跨所有 Windows 窗口的系统桌宠。
 
