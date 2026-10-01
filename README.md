@@ -1,5 +1,5 @@
 # dsh-whale · 来解锁你的工作搭子吧
-<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/3152b8f8-e099-4aa0-bcb6-07df1b82cd3a" />
+<img width="400" height="380" alt="a61f1910e846208baae9db372cf51b0f" src="https://github.com/user-attachments/assets/68628975-d34a-4198-8c0b-b073a0ef531e" />
 
 
 
