@@ -1,4 +1,4 @@
-# dsh-whale · 来解锁你的工作搭子吧
+# dsh-whale · 你的工作搭子
 <img width="250" height="240" alt="a61f1910e846208baae9db372cf51b0f" src="https://github.com/user-attachments/assets/68628975-d34a-4198-8c0b-b073a0ef531e" />
 
 
