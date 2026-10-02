@@ -65,6 +65,20 @@ export function mountWhale() {
   `;
   document.head.append(sidebarStyle);
   const tintSurfaces = () => {
+    // Settings is a full-page surface in DSH, not the chat canvas. Never make
+    // it transparent: otherwise the whale background leaks through every
+    // settings card and makes the whole Settings view look washed out.
+    const visibleText = document.body.innerText || '';
+    const settingsMarkers = ['账户与余额', '通用设置', '内置插件', '桌面设置'];
+    const settingsView = settingsMarkers.filter(marker => visibleText.includes(marker)).length >= 2;
+
+    // Reconcile markers on every pass so switching between chat and Settings
+    // immediately restores the app's own opaque backgrounds.
+    for (const node of document.querySelectorAll('[data-dsh-main-bg="true"]')) {
+      node.removeAttribute('data-dsh-main-bg');
+    }
+    if (settingsView) return;
+
     const maxSidebarWidth = innerWidth * .52;
     const minHeight = innerHeight * .30;
     for (const node of document.body.querySelectorAll('*')) {
