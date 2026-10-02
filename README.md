@@ -21,7 +21,6 @@ dsh plugin --profile web add https://github.com/vvvv9191/dsh-whale.git
 ```powershell
 dsh plugin --profile web remove dsh-whale
 ```
-目前支持0.2.0-rc.1
 
 ## 功能
 
